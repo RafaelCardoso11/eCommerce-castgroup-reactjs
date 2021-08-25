@@ -1,0 +1,27 @@
+@import "src/colors/palet.scss";
+.container-products {
+  display: flex;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 100px 0px;
+  flex-direction: column;
+  .titleProducts {
+    font-size: 5.4rem;
+    font-weight: 400;
+  }
+  .bodyProducts {
+    margin-top: 10px;
+    font-size: 3rem;
+    opacity: 0.7;
+  }
+  .products {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 100px 100px;
+    object-fit: cover;
+    .discount{
+      margin: 0;
+    }
+  }
+}

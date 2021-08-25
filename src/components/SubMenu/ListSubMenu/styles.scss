@@ -1,0 +1,16 @@
+@import 'src/colors/palet.scss';
+.container {
+  .container-list {
+    background-color: $blue-cast;
+  }
+}
+.content-list {
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+ .iconSubmenu{
+   color: white;
+   font-size: 2rem;
+ }
+}

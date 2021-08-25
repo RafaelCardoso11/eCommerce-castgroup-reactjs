@@ -1,0 +1,40 @@
+@import "src/colors/palet.scss";
+
+.products {
+  .product {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    object-fit: cover;
+    margin: 0 auto;
+    cursor: pointer;
+    box-shadow: 0 0 0;
+    padding: 33px;
+    .titleProduct {
+      margin-top: 30px;
+      font-size: 2rem;
+    }
+    .container-bodyProduct {
+      display: block;
+      align-items: center;
+      width: 100%;
+
+      .bodyProduct {
+        font-size: 3rem;
+        color: $blue-cast;
+      }
+    }
+    &:hover {
+      transition: all 200ms;
+      transform: scale(1.2);
+    }
+    .content-product {
+      border-bottom: 2px solid $blue-cast;
+      padding: 10px 20px;
+      .product-img {
+        height: 360px;
+      }
+    }
+  }
+}

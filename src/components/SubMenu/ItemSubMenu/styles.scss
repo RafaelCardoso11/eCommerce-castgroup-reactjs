@@ -1,0 +1,33 @@
+@import "src/colors/palet.scss";
+.content-list {
+  .item-list {
+    &:hover {
+      background-color: $blue-cast;
+    }
+  }
+  .container-ItemListOpen{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    top: 50px;
+  }
+  .contentItemOpen{
+    background-color: $blue-cast;
+    color: white;
+  }
+  .itemOpenList{
+  
+    width: 100%;
+    z-index: 3;
+    &:hover{
+      background-color: rgb(255, 255, 255);
+      color: black;
+    }
+    .iconItemOpenList{
+      color: white;
+    }
+    .itemOpen{
+      font-size: 3rem;
+    }
+  }
+}

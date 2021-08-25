@@ -1,0 +1,16 @@
+@import "src/colors/palet.scss";
+.container-badgeCart{
+  .Badge{
+    color: $white-color;
+    font-size: 199px;
+    margin: 15px 5px;
+   
+  }
+  .Icon{
+    font-size: 3rem;
+    color: black;
+    &.active{
+      color: white;
+    }
+  }
+}
