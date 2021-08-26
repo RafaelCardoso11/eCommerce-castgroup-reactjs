@@ -1,4 +1,5 @@
 import {
+  Button,
   Paper,
   Table,
   TableBody,
@@ -63,6 +64,12 @@ export function CarShop() {
             </TableBody>
           </Table>
         </TableContainer>
+        <footer className="footerCart">
+          <h1 className="subtotal">Sub-total R${"10000000"}</h1>
+          <Button variant="contained" color="primary" className="btn-buyItems">
+            Comprar
+          </Button>
+        </footer>
       </div>
     </section>
   );

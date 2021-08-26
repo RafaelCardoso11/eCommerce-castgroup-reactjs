@@ -27,6 +27,13 @@ export function CardComponent() {
         }
         icon={<CheckIcon className="iconCard" />}
       />
+      <CardItem
+        title={"Garantia de 1 ano."}
+        body={
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum debitis eaque mollitia soluta distinctio tenetur est."
+        }
+        icon={<CheckIcon className="iconCard" />}
+      />
     </div>
   );
 }

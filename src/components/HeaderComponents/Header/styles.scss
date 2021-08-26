@@ -9,10 +9,48 @@
     justify-content: space-around;
     align-items: center;
     .logo {
-      width: 200px;
+      max-width: 200px;
     }
-    &.active{
-      background-color: #3F51B5;
+    &.active {
+      background-color: #3f51b5;
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .Header {
+    .headerMenu {
+      display: none;
+    }
+    .search {
+      width: 60%;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .Header {
+    .headerMenu {
+      display: none;
+    }
+    .search {
+      width: 40%;
+    }
+  }
+}
+@media (max-width: 750px) {
+  .Header {
+    .content-header {
+      justify-content: center;
+      .logo {
+        display: none;
+      }
+      .headerMenu {
+        display: none;
+      }
+      .search {
+        width: 100%;
+      }
     }
   }
 }

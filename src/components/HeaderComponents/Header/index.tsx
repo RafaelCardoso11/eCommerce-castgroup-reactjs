@@ -13,11 +13,6 @@ export class Header extends Component {
   state = {
     backgroundColor: "",
     color: "",
-    products: [],
-    allProducts: [],
-    page: 0,
-    productPerPage: 8,
-    searchValue: "",
   };
   changeBackgroud: EventListener = (event: Event) => {
     if (window.scrollY >= 80) {
@@ -40,8 +35,12 @@ export class Header extends Component {
           <Link to="/">
             <img src={logo} alt="logo-castgroup" className="logo" />
           </Link>
-          <Search color={color} />
-          <HeaderMenu color={color} />
+          <div className="search">
+            <Search color={color} />
+          </div>
+          <div className="headerMenu">
+            <HeaderMenu color={color} />
+          </div>
           <BadgeCart color={color} />
         </Toolbar>
       </AppBar>

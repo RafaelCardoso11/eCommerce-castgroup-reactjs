@@ -1,4 +1,4 @@
-export interface Iproduct {
+export type Iproduct = {
   id: number;
   brand: string;
   chipType: string;
@@ -9,4 +9,4 @@ export interface Iproduct {
   description: string;
   quantity: string;
 }
-export interface IproductType Array<Iproduct>
+export type IproductType = Array<Iproduct>;

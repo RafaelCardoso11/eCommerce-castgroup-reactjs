@@ -27,13 +27,35 @@
     }
     &:hover {
       transition: all 200ms;
-      transform: scale(1.2);
+      transform: scale(1.08);
     }
     .content-product {
       border-bottom: 2px solid $blue-cast;
       padding: 10px 20px;
       .product-img {
         height: 360px;
+      }
+    }
+  }
+}
+@media(max-width: 750px){
+  .products {
+    .product {
+      padding: 40px;
+      .titleProduct {
+        margin-top: 30px;
+        font-size: 2rem;
+      }
+      &:hover {
+        transition: all 200ms;
+        transform: scale(1.04);
+      }
+      .content-product {
+        border-bottom: 2px solid $blue-cast;
+        padding: 10px 20px;
+        .product-img {
+          height: 360px;
+        }
       }
     }
   }

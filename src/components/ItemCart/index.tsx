@@ -4,19 +4,21 @@ import RemoveIcon from "@material-ui/icons/Remove";
 import { GlobalContext } from "../../context";
 import { useContext } from "react";
 import { product } from "../../templates/CarShop/types";
+import { filterCorrency } from "../../Pipes/filterCorrency";
+
 
 export const ItemCart = (props: product) => {
   const { quantityItemCarState, setQuantityItemCar, productState, setProduct } =
     useContext(GlobalContext);
-
+    let correncyTotal = props.price * props.quantity
   return (
     <TableRow>
-      <TableCell component="th" scope="row">
-        {props.picture}
+      <TableCell component="th" scope="row" className="titleCart">
+        <img src={props.picture} alt={props.title} className="img-itemCart" />
         {props.title}
       </TableCell>
       <TableCell className="item-row" align="center">
-        R${props.price}
+        R${filterCorrency(props.price)}
       </TableCell>
       <TableCell className="item-row" align="center">
         {props.quantity}
@@ -47,7 +49,7 @@ export const ItemCart = (props: product) => {
         </ButtonGroup>
       </TableCell>
       <TableCell className="item-row" align="center">
-        R${props.price * props.quantity}
+        R${filterCorrency(correncyTotal)}
       </TableCell>
     </TableRow>
   );

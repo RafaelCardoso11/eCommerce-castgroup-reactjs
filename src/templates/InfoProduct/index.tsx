@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { http } from "../../services/product.service";
 
@@ -13,82 +13,81 @@ import { GlobalContext } from "../../context";
 
 export function InfoProduct() {
   const { id } = useParams<{ id?: string }>();
-  const [productStateA, setProductState] = useState<Iproduct[]>([]);
-  const { setProduct, productState } = useContext(GlobalContext);
+  const [productAllState, setProductState] = useState<Iproduct[]>([]);
+  const [productApi, setProductApi] = useState<Iproduct>();
+  const { setProduct } = useContext(GlobalContext);
 
   useEffect(() => {
     http
       .get("/products/" + id)
-      .then((res) => {
+      .then((res: any) => {
         setProductState(res.data);
+        setProductApi(res.data);
       })
-      .catch((err) => console.log(err));
+      .catch((err: any) => console.log(err));
   }, []);
 
   const handleCLick = () => {
-    setProduct((res) => {
-      return [...res, ...productStateA];
+    setProduct((res: any) => {
+      return [...res, productAllState];
     });
   };
-  useEffect(() => {
-    console.log(productState);
-  }, [productState]);
+
   return (
     <div className="container" id="products">
-      {productStateA.map((product) => (
-        <div className="container-product">
-          <div className="container-product-img-product">
-            <div className="img-product">
-              <img src={product.picture} alt={product.title} />
-            </div>
-            <footer className="footer-img-container">
-              <img src={product.picture} alt={product.title} />
-              <img src={product.picture} alt={product.title} />
-              <img src={product.picture} alt={product.title} />
-            </footer>
+      <div className="container-product">
+        <div className="container-product-img-product">
+          <div className="img-product">
+            <img src={productApi?.picture} alt={productApi?.title} />
           </div>
-          <div className="product-content">
-            <header className="header-product">
-              <h1 className="title-product">{product.title}</h1>
-              <div className="moreDevice">
-                <h3 className="info-device">
-                  Modelo: <strong>{product.brand}</strong>
-                </h3>
-                <h3 className="info-device">
-                  Espaço de Memoria: <strong>{product.memory}</strong>
-                </h3>
-                <h3 className="info-device">
-                  Tipo de chip: <strong>{product.chipType}</strong>
-                </h3>
-                <h3 className="info-device">
-                  Estoque (<strong>{product.quantity}</strong>)
-                </h3>
-              </div>
-              <div className="price-product">
-                R${filterCorrency(Number(product.price))}
-                <br></br>
-                <p className="descont">
-                  Ou 12x{filterCorrency12x(product.price) + ",00"}
-                </p>
-              </div>
-              <Link to="/carrinho">
-                <Button
-                  variant="contained"
-                  color="primary"
-                  className="btn-addToCart"
-                  onClick={() => handleCLick}
-                >
-                  <AddShoppingCartIcon className="iconCart" />+ Add to Car
-                </Button>
-              </Link>
-            </header>
-            <main className="description-container">
-              <h1 className="title-description">Descrição</h1>
-              <p className="description">{product.description}</p>
-            </main>
-          </div>
+          <footer className="footer-img-container">
+            <img src={productApi?.picture} alt={productApi?.title} />
+            <img src={productApi?.picture} alt={productApi?.title} />
+            <img src={productApi?.picture} alt={productApi?.title} />
+          </footer>
         </div>
-      ))}
+        <div className="product-content">
+          <header className="header-product">
+            <h1 className="title-product">{productApi?.title}</h1>
+            <div className="moreDevice">
+              <h3 className="info-device">
+                Modelo: <strong>{productApi?.brand}</strong>
+              </h3>
+              <h3 className="info-device">
+                Espaço de Memoria: <strong>{productApi?.memory}</strong>
+              </h3>
+              <h3 className="info-device">
+                Tipo de chip: <strong>{productApi?.chipType}</strong>
+              </h3>
+              <h3 className="info-device">
+                Estoque (<strong>{productApi?.quantity}</strong>)
+              </h3>
+            </div>
+            <div className="price-product">
+              R${filterCorrency(Number(productApi?.price))}
+              <br></br>
+              <p className="descont">
+                Ou 12x{filterCorrency12x(productApi?.price) + ",00"}
+              </p>
+            </div>
+            <Link to="/carrinho">
+              <Button
+                variant="contained"
+                color="primary"
+                className="btn-addToCart"
+                onClick={handleCLick}
+              >
+                <AddShoppingCartIcon className="iconCart" />+ Add to Car
+              </Button>
+            </Link>
+          </header>
+          <main className="description-container">
+            <h1 className="title-description">Descrição</h1>
+            <p className="description">{productApi?.description}</p>
+          </main>
+        </div>
+      </div>
+      
     </div>
   );
 }

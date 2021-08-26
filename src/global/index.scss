@@ -28,3 +28,15 @@ button, a{
   color: black;
 
 }
+
+
+@media(max-width: 1500px){
+    html{
+      font-size: 55.5%;
+    }
+}
+@media(max-width: 1300px){
+    html{
+      font-size: 40.5%;
+    }
+}

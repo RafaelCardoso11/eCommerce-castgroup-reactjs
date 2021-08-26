@@ -14,3 +14,8 @@
    font-size: 2rem;
  }
 }
+@media (max-width: 1000px){
+  .content-list{
+    display: none;
+  }
+}

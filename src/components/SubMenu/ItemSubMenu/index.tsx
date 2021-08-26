@@ -38,7 +38,7 @@ export const ItemSubMenu = (props: ItemSubmenuType) => {
 
   
   return (
-    <ListItem button onMouseEnter={handleClick} className="item-list">
+    <ListItem button onClick={handleClick} className="item-list">
       <ListItemIcon>{props.icon}</ListItemIcon>
       <ListItemText primary={props.name} classes={{ primary: classes.font }} />
       {open ? (

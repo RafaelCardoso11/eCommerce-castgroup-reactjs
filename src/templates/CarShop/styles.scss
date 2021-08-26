@@ -5,21 +5,29 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 90vh;
   margin: 0 auto;
+  padding-top: 100px;
+  padding: 100px 30px 0px 3px;
   .title-page {
     font-size: 6rem;
     font-weight: 400;
     margin-bottom: 50px;
   }
-  .returnShop{
+  .titleCart{
+    font-size: 2rem;
+    display: flex;
+    color: $blue-cast;
+  }
+  .returnShop {
     color: $blue-cast;
     font-size: 2rem;
     text-decoration: underline;
     margin-bottom: 100px;
   }
-  .table-container {
 
+  .table-container {
+    width: 100%;
+    padding: 30px;
     box-shadow: 0 0 0;
   }
   .table-content {
@@ -27,9 +35,32 @@
       font-weight: 400;
       font-size: 2.7rem;
     }
-    .item-row{
+    .item-row {
       font-size: 2rem;
-      padding:100px;
+      padding: 100px;
+    }
+  }
+  .img-itemCart {
+    height: 250px;
+  }
+  .footerCart {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+   
+    width: 100%;
+    margin: 100px;
+    .subtotal {
+      font-weight: 400;
+      font-size: 3rem;
+    
+    }
+    .btn-buyItems {
+      width: 400px;
+      font-size: 2rem;
+      padding: 10px;
+      margin: 30px;
     }
   }
 }
